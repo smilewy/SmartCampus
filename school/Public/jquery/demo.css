@@ -1,0 +1,7 @@
+td{ border: 1px #999 solid; height: 22px; color: #111; font-size: 14px; min-width: 60px;}
+tr{  text-align: center; }
+#ganburenmianbaio{width: 650px; padding: 50px; border: 1px #999 solid;}
+.clears{clear: both; overflow: hidden;}
+.jzleft{float: left; width: 9%; height: 120px; border-right: 1px #999 solid; text-align: center; line-height: 30px;}
+.jzright{float: right;width: 90%;height: 120px;  }
+.borderdd{margin-top: 30px; border-bottom: 1px #999 dashed; height: 1px;}

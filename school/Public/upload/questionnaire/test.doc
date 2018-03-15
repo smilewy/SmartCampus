@@ -1,0 +1,78 @@
+    <!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>Laravel</title>
+    <link rel="stylesheet" type="text/css" href="Public/jquery/demo.css">
+</head>
+    <a href="http://localhost/school/user/exportExcel?type=hjXi&ListType=xjXi&class[]=1&class[]=2&class[]=3&grade=1"> daochu </a>
+    <body>
+    <div class="container">
+        <div class="content" style="margin-left: 60px; margin-top: 60px;">
+            <form class="upload_form" enctype='multipart/form-data' method='post' action='http://localhost/school/user/userGl?type=export&roleNameEn=zg'>
+            选择批量导入的文件<input name='userFile' type='file'>
+            <input class="upload_go" type="submit" value="上传" style="border: 1px #aaa solid;">
+            </form>
+        </div>
+    </div>
+    <div id="ganburenmianbaio">
+        <div style="font-size: 18px; font-weight: 600;  padding-bottom: 20px;">江龙的报告书</div>
+        <table rules="all" frame="border" id = "tableId">
+            <tr>
+                <td rowspan="2" >姓名</td>
+                <td rowspan="2">江龙</td>
+                <td rowspan="2">考勤情况</td>
+                <td>旷课</td>
+                <td>迟到</td>
+                <td>早退</td>
+                <td>请假</td>
+                <td rowspan="2">操行<br>评定</td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td>旷课</td>
+                <td>迟到</td>
+                <td>早退</td>
+                <td>请假</td>
+            </tr>
+            <tr style="height: 200px;">
+                <td>学期</br>评语</td>
+                <td colspan = "8"></td>
+            </tr>
+            <tr>
+                <td rowspan="2"> 成绩</br>表</td>
+                <td>学科</td>
+                <td>语文</td>
+                <td>数学</td>
+                <td>外语</td>
+            </tr>
+            <tr>
+                <td>分数</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+        </table>
+        <div class="borderdd"></div>
+        <div style="border: 1px #999 solid; margin-top: 20px;">
+            <div class="jzleft">
+                家</br>长</br>意</br>见
+            </div>
+            <div class="jzright">
+
+            </div>
+            <div class="clears"></div>
+        </div>
+    </div>
+    <input type="button" value="daochu" id="daochu">
+    </body>
+</html>
+    <script type="text/javascript" src="public/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="public/jquery/FileSaver.js"></script>
+    <script type="text/javascript" src="public/jquery/jquery.wordexport.js"></script>
+    <script>
+        $("#daochu").click(function() {
+            $("#ganburenmianbaio").wordExport("fff");
+            //fileName为导出的word文件的命名
+        });
+    </script>

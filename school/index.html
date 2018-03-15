@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8">
+<head>
+    <title>Laravel</title>
+</head>
+<style>
+    td{ border: 1px #999 solid; height: 22px; color: #111; font-size: 14px; min-width: 100px;}
+    tr{margin-top: 4px; margin-bottom: 4px; border: 1px #999 solid; text-align: center; }
+</style>
+    <script src="public/jquery/jquery.min.js"></script>
+    <a href="http://localhost/school/user/exportExcel?type=hjXi&ListType=xjXi&class[]=1&class[]=2&class[]=3&grade=1"> daochu </a>
+    <body>
+    <div class="container">
+        <div class="content" style="margin-left: 60px; margin-top: 60px;">
+            <form class="upload_form" enctype='multipart/form-data' method='post' action='http://localhost/school/User/test'>
+            选择批量导入的文件<input name='userFile' type='file'>
+                <input type="text" name="gg">
+            <input class="upload_go" type="submit" value="上传" style="border: 1px #aaa solid;">
+            </form>
+        </div>
+    </div>
+    </body>
+    <div style="width: 40%;">
+        <div style="font-size: 20px; font-weight:bold;text-align: center">迈科智能家庭报告书</div>
+        <div style="font-size: 16px;text-align:left; color:#000000; margin-top: 28px;">尊敬的同学家长</div>
+        <div style="font-size: 16px;text-align:left; color:#000000; min-height: 50px;"></div>
+        <div style="font-size: 16px;text-align:left; color:#000000">学业水平：</div>
+        <div style="font-size: 16px;text-align:left; color:#000000; margin-top: 10px;">
+            <table style="width: 100%;" rules="all" frame="border">
+                <tr>
+                    <td style="font-weight: bold">语文</td><td style="font-weight: bold">语文</td><td style="font-weight: bold">语文</td>
+                </tr>
+                <tr>
+                    <td>100</td><td>100</td><td>100</td>
+                </tr>
+            </table>
+        </div>
+        <div style="font-size: 16px;text-align:left; color:#000000; margin-top: 10px;">学期评语：</div>
+        <div style="font-size: 16px;text-align:left; color:#000000; margin-top: 10px;border: 1px #aaa solid; min-height: 80px;">
+
+        </div>
+        <div style="font-size: 16px;text-align:left; color:#000000; margin-top: 60px;">家长意见栏：</div>
+        <div style="font-size: 16px;text-align:left; color:#000000; margin-top: 10px;border: 1px #aaa solid; min-height: 120px;">
+
+        </div>
+    </div>
+</html>
+<script>
+    /*$('.upload_go').click(function(){
+        setTimeout(function(){
+            var doc = document.getElementById("myFrame").contentDocument;
+            var tt =(doc.body.getElementsByTagName('pre').item(0).innerHTML);
+            var data =  eval('(' + tt + ')');
+            console.log(data);
+        }, 1500);
+    });*/
+</script>
+<script>
+       /* var url = Array();
+        url.push(1);
+        url.push(2);
+        url.push(3);
+        //alert(url);
+        $.ajax(
+                {
+                    type: "GET",
+                    url: "http://localhost/school/user/test",
+                    data: {id:url},
+                    dataType:'json',
+                    success: function(data)
+                    {
+
+                    }
+            }
+        );*/
+</script>

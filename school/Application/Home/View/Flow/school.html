@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        td{ border: 1px #999 solid; height: 40px; color: #111; font-size: 14px; min-width: 160px;}
+        tr{  text-align: center; }
+    </style>
+</head>
+<body>
+    <div style="margin-left: 100px;">
+        <span style="font-size: 16px; font-weight: 600">新建学校</span></br></br>
+        <form action="addSchool" method="post" enctype="multipart/form-data">
+            &nbsp;&nbsp;学校名称：<input type="input" name="scName"> </br></br>
+            &nbsp;&nbsp;&nbsp;学校电话：<input type="input" name="telephone"></br></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;学校邮箱：<input type="input" name="mail"></br></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校所在省：<input type="input" name="province"></br></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校所在市：<input type="input" name="city"></br></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校所在地址：<input type="input" name="area"></br></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上级主管部门：<input type="input" name="ministries"></br></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校logo图片：<input class="userFile" type="file" name="userFile"></br></br>
+            学校类型：<select style="width: 90px;" name="type">
+            <option value="民办">
+                民办
+            </option>
+            <option value="公办">
+                公办
+            </option>
+        </select></br></br>
+            学校用户前缀：<input type="input" name="prefix"></br></br>
+            学校英文名：<input type="input" name="enName"></br></br></br>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+    <script src="../Public/jquery/jquery.min.js"></script>
+    <script>
+        $('.userFile').change(function(){
+            $('.uploaddddd').submit();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="alll">
+    <div style="width: 65%; margin-left:auto; font-size: 28px; font-weight: 600; margin-right: auto; margin-bottom: 40px; text-align: center;"><?php echo $return['questionName']?></div>
+    <div style="width: 40%; margin-left:auto;  margin-right: auto; margin-bottom: 40px; margin-top: 20px; text-align: center;">
+        <span style="padding-right: 6px;">姓名:</span><input type="text" id="userName" style="width: 70px; text-align: center; height: 26px; font-size: 16px; border: 0px #aaaaaa solid; border-bottom: 1px #aaaaaa solid;"  name="userName">  <span style="margin-left: 10px;padding-right: 6px;">性别:</span><input type="text" id="sex" style="width: 70px;text-align: center;  height: 26px; font-size: 16px; border: 0px #aaaaaa solid; border-bottom: 1px #aaaaaa solid;" name="userName">  <span style="margin-left: 10px;padding-right: 6px;">年龄:</span><input id="year" style="width: 70px;text-align: center;  height: 26px; font-size: 16px; border: 0px #aaaaaa solid; border-bottom: 1px #aaaaaa solid;" type="text" name="userName">
+    </div>
+    <div style="width: 40%; margin-left:auto;  margin-right: auto; margin-bottom: 40px; margin-top: 20px; text-align: right;">
+        <input id="submitGogo" style="margin-left: 100px; width: 60px; height:28px; line-height: 28px;" type="submit" value="提交">
+    </div>
+    <div style="width: 65%; margin-left:auto; margin-right: auto; padding-bottom: 60px;">
+    <?php foreach($return['content'] as $key => $value){ ?>
+            <?php if($value['type'] ==0){?>
+                <div class="title" isMust="<?php echo $value['isMust']?>"  typedata = "<?php echo $value['type']?>" num = <?php echo$key?> style="border: 1px #aaaaaa solid; padding: 12px; margin-top: 6px;">
+                    <div  style="font-weight: 600; font-size: 20px;"><?php echo $value['QNum']?>. <?php echo $value['title'];?><?php if($value['isMust'] == 'true'){ echo '<span style="font-size: 18px; font-weight: 100; color:#aaaaaa;">(必答)</span>';}?></div>
+                    <?php foreach($value['QNSetting'] as $key1 => $value1){?>
+                    <div class="anser" anserNum="<?php echo $key1?>" style=" font-size: 20px; margin-left: 40px; margin-top: 18px; padding: 4px;"><input style="width: 20px; height: 20px; vertical-align: middle" value="<?php echo $key1?>" name="radio<?php echo $value['QNum']?>" type="radio"><span style="margin-left: 4px;vertical-align: middle"><?php echo $value1['value']?></span></div>
+                    <?php }?>
+                </div>
+            <?php } ?>
+            <?php if($value['type'] ==1){?>
+            <div class="title" isMust="<?php echo $value['isMust']?>"   typedata = "<?php echo $value['type']?>" num = <?php echo $key?> style="border: 1px #aaaaaa solid; padding: 12px; margin-top: 6px;">
+                <div  style="font-weight: 600; font-size: 20px;"><?php echo $value['QNum']?>. <?php echo $value['title']?> <?php if($value['isMust'] == 'true'){ echo '<span style="font-size: 18px; font-weight: 100; color:#aaaaaa;">(必答)</span>';}?></div>
+                <?php foreach($value['QNSetting'] as $key1 => $value1){?>
+                <div class="anser" anserNum="<?php echo $key1?>" style=" font-size: 20px; margin-left: 40px; margin-top: 18px;  padding: 4px;"><input  value="<?php echo $key1?>" style="width: 20px; height: 20px; vertical-align: middle" type="checkbox"><span style="margin-left: 4px;vertical-align: middle"><?php echo $value1['value']?></span></div>
+                <?php }?>
+            </div>
+            <?php } ?>
+            <?php if($value['type'] ==2){?>
+            <div class="title" isMust="<?php echo $value['isMust']?>"   typedata = "<?php echo $value['type']?>" num = <?php echo$key?> style="border: 1px #aaaaaa solid; padding: 12px; margin-top: 6px;">
+                <div  style="font-weight: 600; font-size: 20px;"><?php echo $value['QNum']?>. <?php echo $value['title'];?><?php if($value['isMust'] == 'true'){ echo '<span style="font-size: 18px; font-weight: 100; color:#aaaaaa;">(必答)</span>';}?></div>
+                <div class="anser" style=" font-size: 20px; margin-left: 40px; margin-top: 18px; padding: 4px;">答：<input style="width: 80%; height: 30px; border: 1px #cccccc solid; vertical-align: middle" type="text"></div>
+            </div>
+            <?php } ?>
+            <?php if($value['type'] ==3){?>
+            <div class="title" maxsort="<?php echo $value['maxScore']?>" isMust="<?php echo $value['isMust']?>"  typedata = "<?php echo $value['type']?>" num = <?php echo$key?> style="border: 1px #aaaaaa solid; padding: 12px; margin-top: 6px;">
+                <div     style="font-weight: 600; font-size: 20px;"><?php echo $value['QNum']?>. <?php echo $value['title'];?><?php if($value['isMust'] == 'true'){ echo '<span style="font-size: 18px; font-weight: 100; color:#aaaaaa;">(必答)</span>';}?></div>
+                <div class="anser" style=" font-size: 20px; margin-left: 40px; margin-top: 18px;padding: 4px;">答：<input class="dddddddd" style="width: 80%; height: 30px; border: 1px #cccccc solid; vertical-align: middle" type="text"></div>
+                <div style="font-size: 12px; color: #999999;margin-left: 40px; margin-top: 18px;padding: 4px;">最大分数：<?php echo $value['maxScore']?></div>
+            </div>
+            <?php } ?>
+        <?php } ?>
+    </div>
+</div>
+</body>
+    <script src="../Public/jquery/jquery.min.js"></script>
+    <script>
+    </script>
+    <script>
+        var data = <?php   header('Content-Type:application/json; charset=utf-8'); echo json_encode($return['content']) ?>;
+        $('#submitGogo').click(function(){
+
+            $('.title').each(function(){
+                if($(this).attr('typedata') == 0){
+                    var num = $(this).attr('num');
+                    var checkNum = $(this).find("input[type='radio']:checked").val();
+                    if(checkNum){
+                        data[num]['QNSetting'][checkNum]['isChoose'] = 1;
+                    }
+                    if($(this).attr('isMust') == 'true'){
+                        if(!checkNum){
+                            $(this).css('border','1px #ff0000 solid');
+                            $(this).attr('uploadCheck',0);
+                        }else{
+                            $(this).css('border','1px #aaaaaa solid');
+                            $(this).attr('uploadCheck',1);
+                        }
+                    }else{
+                        $(this).attr('uploadCheck',1);
+                    }
+                }
+                if($(this).attr('typedata') == 1){
+                    var num = $(this).attr('num');
+                    var checkNum;
+                    $(this).find("input[type='checkbox']:checked").each(function(){
+                        checkNum = $(this).val();
+                        data[num]['QNSetting'][checkNum]['isChoose'] = 1;
+                    });
+                    if($(this).attr('isMust') == 'true'){
+                        if(!checkNum){
+                            $(this).css('border','1px #ff0000 solid');
+                            $(this).attr('uploadCheck',0);
+                        }else{
+                            $(this).css('border','1px #aaaaaa solid');
+                            $(this).attr('uploadCheck',1);
+                        }
+                    }else{
+                        $(this).attr('uploadCheck',1);
+                    }
+                }
+                if($(this).attr('typedata') == 2){
+                    var num = $(this).attr('num');
+                    data[num]['QNSetting']['value'] =  $(this).find("input[type='text']").val();
+                    if($(this).attr('isMust') == 'true'){
+                        if($(this).find("input[type='text']").val() == ''){
+                            $(this).css('border','1px #ff0000 solid');
+                            $(this).attr('uploadCheck',0);
+                        }else{
+                            $(this).css('border','1px #aaaaaa solid');
+                            $(this).attr('uploadCheck',1);
+                        }
+                    }else{
+                        $(this).attr('uploadCheck',1);
+                    }
+                }
+                if($(this).attr('typedata') == 3){
+                    var num = $(this).attr('num');
+                    var maxsort = $(this).attr('maxsort')
+                    data[num]['QNSetting']['value'] =  $(this).find("input[type='text']").val();
+                    if($(this).attr('isMust') == 'true'){
+                        if($(this).find("input[type='text']").val() == ''){
+                            $(this).css('border','1px #ff0000 solid');
+                            $(this).attr('uploadCheck',0);
+                        }else{
+                            $(this).css('border','1px #aaaaaa solid');
+                            $(this).attr('uploadCheck',1);
+                        }
+                    }else{
+                        $(this).attr('uploadCheck',1);
+                    }
+                    if(!isNaN(data[num]['QNSetting']['value']) && parseInt(data[num]['QNSetting']['value'])>0 && parseInt(data[num]['QNSetting']['value'])<=parseInt(maxsort)){
+                        $(this).css('border','1px #aaaaaa solid');
+                        $(this).attr('uploadCheck',1);
+                    }else{
+                        alert('ci');
+                        $(this).css('border','1px #ff0000 solid');
+                        $(this).attr('uploadCheck',0);
+                    }
+                }
+            });
+            var name = $('#userName').val();
+            var sex = $('#sex').val();
+            var year = $('#year').val();
+            var tt = 0;
+            var token = "<?php echo $return['token']?>";
+            var questionId = "<?php echo $return['questionId']?>";
+            $('.title').each(function(){
+                if($(this).attr('uploadCheck') == 0){
+                    tt =1;
+                }
+            });
+            if(tt){
+                alert('还有必答题没答,或则分数提没有填数字');
+            }else{
+                $.post('getTest?type=create',{'QNArray':data,'questionId':questionId,'token':token,'name':name,'sex':sex,'year':year},function(reg){
+                    if(reg.statu ==1){
+                        $('#alll').hide();
+                        $('body').append("<div ><span style='font-size: 20px;'>填写成功</span></div>");
+                    }else{
+                        alert('填写失败');
+                    }
+                });
+            }
+        });
+    </script>
+</html>

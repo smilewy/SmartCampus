@@ -1,0 +1,28 @@
+th.fc-widget-header{padding:0.5rem;}
+#homeCalendar1 th.fc-widget-header{background:#f3f3f3;color:#9b9b9b;}
+#homeCalendar2 th.fc-widget-header{background:#4da1ff;color:#fff;}
+/*背景色*/
+/*.fc-unthemed td.fc-today{background:red;}*/
+#homeCalendar2 .fc-view-container td.fc-today{background:none;}
+/*左边部分button*/
+/*button*/
+.fc-left button.fc-button{width:1.5rem;height:1.5rem;background:none;border:1px solid #dcdcdc;}
+.fc-left button.fc-button:focus{box-shadow:none;}
+.fc button .fc-icon{left:-0.3em;margin:0;top:-0.1em;}
+.fc-icon-right-single-arrow:after{font-size:1.7rem;color:#9b9b9b;}
+.fc-icon-left-single-arrow:after{font-size:1.7rem;color:#9b9b9b;}
+/*右边部分button*/
+.fc-right button.fc-button{/*width:3.875rem;*/padding:0 0.8rem;height:1.625rem;color:#666;background:none;border:1px solid #dcdcdc;}
+.fc-right button.fc-button:focus{box-shadow:none;}
+.fc-right button.fc-button.fc-state-active{color:#fff;background:#ff5b5b;border:none;box-shadow:none;}
+
+/*more样式*/
+a.fc-more{padding:0.3rem 0.5rem;background:#bfbfbf;color:#fff;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;}
+/*内容超出则换行*/
+.fc-day-grid-event .fc-content{white-space:normal;word-break:break-all;}
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        td{ border: 1px #999 solid; height: 40px; color: #111; font-size: 14px; min-width: 160px;}
+        tr{  text-align: center; }
+    </style>
+</head>
+<body>
+    <div>
+        <table rules="all" frame="border">
+            <tr>
+                <td>学校名</td>
+                <td>电话</td>
+                <td>位置</td>
+                <td>所管单位</td>
+                <td>前缀</td>
+                <td>操作</td>
+            </tr>
+            <?php foreach($school as $key => $value){?>
+            <tr>
+                <td><?php echo $value['scName']?></td>
+                <td><?php echo $value['telephone']?></td>
+                <td><?php echo $value['province'].$value['city'].$value['area']?></td>
+                <td><?php echo $value['ministries']?></td>
+                <td><?php echo $value['prefix']?></td>
+                <td><button class="updata" style="height: 30px; line-height: 30px; width: 80px; background: #dddddd" dataId="<?php echo $value['scId']?>">升级</button></td>
+            </tr>
+            <?php } ?>
+        </table>
+    </div>
+    <script src="Public/jquery/jquery.min.js"></script>
+    <script>
+        $('.updata').click(function(){
+            var id = $(this).attr('dataId');
+            $.post("Flow/upGrade",{'scId':id},function(){
+
+            })
+        });
+    </script>
+
+</body>
+</html>
